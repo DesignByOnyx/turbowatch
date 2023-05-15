@@ -422,10 +422,7 @@ type Retry = {
 `watch` returns an instance of `TurbowatchController`, which can be used to gracefully terminate the script:
 
 ```ts
-const abortController = new AbortController();
-
-const { shutdown } = watch({
-  abortSignal: abortController.signal,
+const { shutdown } = await watch({
   project: __dirname,
   triggers: [
     {
